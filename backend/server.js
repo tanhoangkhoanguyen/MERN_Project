@@ -10,5 +10,5 @@ app.use(express.json())
 
 app.listen(PORT, () => {
     connect.connectToServer()
-    console.log(`Together, Nhi and I can... ${PORT}`)
+    console.log(`Server is running on port ${PORT}`)
 })
