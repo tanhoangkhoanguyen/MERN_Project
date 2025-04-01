@@ -1,5 +1,5 @@
 const express = require("express")
-const database = required("./connect")
+const database = require("./connect")
 const ObjectId = require("mongodb").ObjectId
 
 let postRoutes = express.Router()
@@ -59,3 +59,10 @@ postRoutes.route("/posts/:id").put(async(request, response) => {
 })
 
 //#5 - Delete one
+postRoutes.route("/posts/:id").delete(async(request, response) => {
+    let db = database.getDb()
+    let data = await db.collection("posts").deleteOne({_id: new ObjectId(request.params.id)})
+    response.json(data)
+})
+
+module.exports = postRoutes
