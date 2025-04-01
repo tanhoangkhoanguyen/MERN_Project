@@ -21,7 +21,7 @@ postRoutes.route("/posts").get(async(request, response) => {
 postRoutes.route("/posts/:id").get(async(request, response) => {
     let db = database.getDb()
     let data = await db.collection("posts").findOne({_id: new ObjectId(request.params.id)})
-    if (Object.keys(data.length) > 0) {
+    if (Object.keys(data).length > 0) {
         response.json(data)
     } else {
         throw new Error("Data was not found :(")
