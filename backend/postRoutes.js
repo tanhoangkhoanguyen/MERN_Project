@@ -12,7 +12,7 @@ postRoutes.route("/posts").get(async(request, response) => {
     if (data.length > 0) {
         response.json(data)
     } else {
-        throw new Error("Data was not found :(")
+        throw new Error("Data was not found")
     }
 })
 
@@ -24,7 +24,7 @@ postRoutes.route("/posts/:id").get(async(request, response) => {
     if (Object.keys(data).length > 0) {
         response.json(data)
     } else {
-        throw new Error("Data was not found :(")
+        throw new Error("Data was not found")
     }
 })
 
