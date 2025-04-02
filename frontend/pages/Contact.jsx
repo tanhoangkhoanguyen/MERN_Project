@@ -3,7 +3,7 @@
 export function Contact() {
     return (
         <>
-            Home page
+            Contact
         </>
     )
 }

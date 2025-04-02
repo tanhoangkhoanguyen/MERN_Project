@@ -4,7 +4,7 @@ import { pageData } from "./pageData"
 export function Navbar() {
     return (
         <div className="navbar">
-            {pageDate.map((page) => {
+            {pageData.map((page) => {
                 return (
                     <Link to={page.path} className="navItem">
                         <button>
